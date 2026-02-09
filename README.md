@@ -18,7 +18,7 @@ This project develops predictive models to improve forecast accuracy and support
 
 ## Dataset
 Walmart Retail Sales Dataset (2010–2012)  
-Source: Kaggle
+Source: https://www.kaggle.com/competitions/walmart-recruiting-store-sales-forecasting/data
 
 (Note: Dataset not uploaded due to size. Available publicly on Kaggle.)
 
