@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 1300" xmlns="http://www.w3.org/2000/svg" width="800" height="1300">
+  <defs>
+    <style>
+      .box { fill: #3498db; stroke: #2980b9; stroke-width: 2; }
+      .text { fill: white; font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+      .title-text { fill: white; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .arrow { stroke: #2c3e50; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .decision { fill: #e67e22; stroke: #d35400; stroke-width: 2; }
+      .process { fill: #27ae60; stroke: #229954; stroke-width: 2; }
+      .evaluation { fill: #e74c3c; stroke: #c0392b; stroke-width: 2; }
+      .data { fill: #9b59b6; stroke: #8e44ad; stroke-width: 2; }
+      .small-text { font-size: 10px; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2c3e50"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="25" class="title-text" style="font-size: 18px; fill: #2c3e50;">Research Methodology Flowchart</text>
+  
+  <!-- Start -->
+  <ellipse cx="400" cy="60" rx="60" ry="20" class="data"/>
+  <text x="400" y="65" class="title-text">START</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="400" y1="80" x2="400" y2="110" class="arrow"/>
+  
+  <!-- Step 1: Data Collection -->
+  <rect x="300" y="120" width="200" height="60" rx="10" class="data"/>
+  <text x="400" y="140" class="title-text">Data Collection</text>
+  <text x="400" y="155" class="text small-text">Walmart Dataset</text>
+  <text x="400" y="170" class="text small-text">Train + Features + Stores</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="400" y1="180" x2="400" y2="210" class="arrow"/>
+  
+  <!-- Step 2: Preprocessing -->
+  <rect x="280" y="220" width="240" height="60" rx="10" class="box"/>
+  <text x="400" y="240" class="title-text">Data Preprocessing</text>
+  <text x="400" y="255" class="text small-text">Missing values, cleaning</text>
+  <text x="400" y="270" class="text small-text">Date standardization</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="400" y1="280" x2="400" y2="310" class="arrow"/>
+  
+  <!-- Step 3: Aggregation -->
+  <rect x="280" y="320" width="240" height="60" rx="10" class="process"/>
+  <text x="400" y="340" class="title-text">Chain-Level Aggregation</text>
+  <text x="400" y="355" class="text small-text">Sum weekly sales across</text>
+  <text x="400" y="370" class="text small-text">all stores &amp; departments</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="400" y1="380" x2="400" y2="410" class="arrow"/>
+  
+  <!-- Step 4: EDA -->
+  <rect x="260" y="420" width="280" height="60" rx="10" class="process"/>
+  <text x="400" y="440" class="title-text">Exploratory Data Analysis</text>
+  <text x="400" y="455" class="text small-text">Temporal patterns, seasonality</text>
+  <text x="400" y="470" class="text small-text">Store/dept analysis, promotions impact</text>
+  
+  <!-- Arrow 5 -->
+  <line x1="400" y1="480" x2="400" y2="510" class="arrow"/>
+  
+  <!-- Step 5: Feature Engineering -->
+  <rect x="260" y="520" width="280" height="60" rx="10" class="box"/>
+  <text x="400" y="540" class="title-text">Feature Engineering</text>
+  <text x="400" y="555" class="text small-text">Lags (1,4,52), Rolling means (4,13)</text>
+  <text x="400" y="570" class="text small-text">Calendar features, Cyclical encoding</text>
+  
+  <!-- Arrow 6 -->
+  <line x1="400" y1="580" x2="400" y2="610" class="arrow"/>
+  
+  <!-- Step 6: CV Setup -->
+  <rect x="260" y="620" width="280" height="60" rx="10" class="decision"/>
+  <text x="400" y="640" class="title-text">Monte Carlo Time Series CV</text>
+  <text x="400" y="655" class="text small-text">10 Random Splits</text>
+  <text x="400" y="670" class="text small-text">Train: 80 weeks | Test: 8 weeks</text>
+  
+  <!-- Arrow 7 -->
+  <line x1="400" y1="680" x2="400" y2="710" class="arrow"/>
+  
+  <!-- Step 7: Model Training -->
+  <rect x="300" y="720" width="200" height="40" rx="10" class="process"/>
+  <text x="400" y="735" class="title-text">Model Training</text>
+  <text x="400" y="750" class="text small-text">6 Models × 10 CV Folds</text>
+  
+  <!-- Arrow splits -->
+  <line x1="400" y1="760" x2="400" y2="780" class="arrow"/>
+  <line x1="400" y1="780" x2="200" y2="800" class="arrow"/>
+  <line x1="400" y1="780" x2="600" y2="800" class="arrow"/>
+  
+  <!-- Classical Models -->
+  <rect x="80" y="810" width="240" height="100" rx="10" class="process"/>
+  <text x="200" y="830" class="title-text">Classical Models</text>
+  <text x="200" y="850" class="text small-text">• SARIMA (Auto ARIMA)</text>
+  <text x="200" y="865" class="text small-text">• ETS (Exponential Smoothing)</text>
+  <text x="200" y="880" class="text small-text">• Seasonal Naïve (lag=52)</text>
+  
+  <!-- ML Models -->
+  <rect x="480" y="810" width="240" height="100" rx="10" class="evaluation"/>
+  <text x="600" y="830" class="title-text">Machine Learning</text>
+  <text x="600" y="850" class="text small-text">• Random Forest (200 trees)</text>
+  <text x="600" y="865" class="text small-text">• XGBoost (200 rounds)</text>
+  <text x="600" y="880" class="text small-text">• Prophet (Facebook)</text>
+  
+  <!-- Arrows converge -->
+  <line x1="200" y1="910" x2="400" y2="950" class="arrow"/>
+  <line x1="600" y1="910" x2="400" y2="950" class="arrow"/>
+  
+  <!-- Step 8: Evaluation -->
+  <rect x="280" y="960" width="240" height="60" rx="10" class="evaluation"/>
+  <text x="400" y="980" class="title-text">Performance Evaluation</text>
+  <text x="400" y="995" class="text small-text">MAE, RMSE, MAPE</text>
+  <text x="400" y="1010" class="text small-text">Across all CV folds</text>
+  
+  <!-- Arrow 9 -->
+  <line x1="400" y1="1020" x2="400" y2="1050" class="arrow"/>
+  
+  <!-- Step 9: Diagnostics -->
+  <rect x="260" y="1060" width="280" height="40" rx="10" class="box"/>
+  <text x="400" y="1075" class="title-text">Model Diagnostics</text>
+  <text x="400" y="1090" class="text small-text">Feature importance analysis</text>
+  
+  <!-- Arrow 10 -->
+  <line x1="400" y1="1100" x2="400" y2="1130" class="arrow"/>
+  
+  <!-- Step 10: Results -->
+  <rect x="280" y="1140" width="240" height="60" rx="10" class="data"/>
+  <text x="400" y="1160" class="title-text">Comparative Analysis</text>
+  <text x="400" y="1175" class="text small-text">Statistical comparison</text>
+  <text x="400" y="1190" class="text small-text">Business insights</text>
+  
+  <!-- Arrow 11 -->
+  <line x1="400" y1="1200" x2="400" y2="1230" class="arrow"/>
+  
+  <!-- End -->
+  <ellipse cx="400" cy="1245" rx="60" ry="20" class="evaluation"/>
+  <text x="400" y="1250" class="title-text">END</text>
+  
+  <!-- Legend -->
+  <rect x="20" y="20" width="150" height="120" rx="5" fill="none" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="95" y="35" class="text" style="fill: #2c3e50; font-weight: bold;">Legend</text>
+  
+  <rect x="30" y="45" width="15" height="12" class="data"/>
+  <text x="50" y="55" class="text small-text" style="fill: #2c3e50; text-anchor: start;">Data Process</text>
+  
+  <rect x="30" y="65" width="15" height="12" class="box"/>
+  <text x="50" y="75" class="text small-text" style="fill: #2c3e50; text-anchor: start;">Preprocessing</text>
+  
+  <rect x="30" y="85" width="15" height="12" class="process"/>
+  <text x="50" y="95" class="text small-text" style="fill: #2c3e50; text-anchor: start;">Analysis</text>
+  
+  <rect x="30" y="105" width="15" height="12" class="decision"/>
+  <text x="50" y="115" class="text small-text" style="fill: #2c3e50; text-anchor: start;">CV Framework</text>
+  
+  <rect x="30" y="125" width="15" height="12" class="evaluation"/>
+  <text x="50" y="135" class="text small-text" style="fill: #2c3e50; text-anchor: start;">Evaluation</text>
+</svg>
